@@ -3,7 +3,7 @@
 #include <string>
 #include <algorithm>
 #include <vector>
-
+#include <ctype.h>
 using namespace std;
 
 bool palindromo (string palavra) {
@@ -88,5 +88,35 @@ bool anagrama(string str2, string str3){
             return false;
         }
     return true;
+
+}
+void palavraContida_palavra(string frase){
+	string str2 = frase;
+	
+	frase.erase(remove(frase.begin(), frase.end(), ' '), frase.end());
+	string str1 = frase;//frase sem espaços
+
+    string aux = ""; //Variável auxiliar para armazenar a palavra
+
+    for (int i = 0; i < frase.length(); i++){
+       if (str2[i] == ' '){
+           cout << aux << "\n";
+           aux = ""; //Limpa a variável auxiliar para armazena a próxima palavra
+       }
+       else{
+         aux = aux + str2[i]; //Armazena o caracter na variável auxiliar
+       }
+
+    }
+    for (unsigned int i = 0; i<strlen(str2) ; ++i){
+		//strstr retorna um ponteiro pra primeira posição da ocorrencia de str2
+		//toupper poe em caixa alta    
+    	toupper (&strstr(str2,str1)+i);	
+    
+
+    }
+
+        
+
 
 }
