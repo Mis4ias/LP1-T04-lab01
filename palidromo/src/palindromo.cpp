@@ -91,6 +91,7 @@ bool anagrama(string str2, string str3){
 
 }
 void palavraContida_palavra(string frase){
+	
 	string str2 = frase;
 	
 	frase.erase(remove(frase.begin(), frase.end(), ' '), frase.end());
@@ -100,7 +101,12 @@ void palavraContida_palavra(string frase){
 
     for (int i = 0; i < frase.length(); i++){
        if (str2[i] == ' '){
-           cout << aux << "\n";
+        	for (unsigned int j = 0; j<strlen(std::string str2) ; ++j){
+			//strstr retorna um ponteiro pra primeira posição da ocorrencia de str2
+			//toupper poe em caixa alta    
+    			toupper (&(strstr(std::string str2,std::string str1))+j);	
+    		}
+
            aux = ""; //Limpa a variável auxiliar para armazena a próxima palavra
        }
        else{
@@ -108,14 +114,7 @@ void palavraContida_palavra(string frase){
        }
 
     }
-    for (unsigned int i = 0; i<strlen(str2) ; ++i){
-		//strstr retorna um ponteiro pra primeira posição da ocorrencia de str2
-		//toupper poe em caixa alta    
-    	toupper (&strstr(str2,str1)+i);	
-    
-
-    }
-
+   
         
 
 
